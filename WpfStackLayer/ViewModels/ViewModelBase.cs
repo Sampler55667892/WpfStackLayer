@@ -20,7 +20,7 @@ namespace WpfStackLayer
             var isValueChanged =
                 (currentValue != null && newValue == null) ||
                 (currentValue == null && newValue != null) ||
-                !currentValue.Equals(newValue);
+                !currentValue.Equals( newValue );
 
             if (isValueChanged) {
                 currentValue = newValue;
@@ -44,7 +44,6 @@ namespace WpfStackLayer
             var propertyName = ((MemberExpression)Property.Body).Member.Name;
             RaisePropertyChanged( propertyName );
         }
-
 
         void RaisePropertyChanged( string propertyName )
         {
