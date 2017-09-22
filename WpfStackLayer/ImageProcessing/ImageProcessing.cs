@@ -11,8 +11,8 @@ namespace WpfStackLayer.ImageProcessing
         /// <summary>
         /// ファイルのロックを外しキャッシュを無視して画像をロードします。
         /// </summary>
-        /// <param name="fileInfo"></param>
-        /// <returns></returns>
+        /// <param name="fileInfo">ファイル情報</param>
+        /// <returns>ビットマップ画像</returns>
         public static BitmapImage LoadFromFileIgnoringLockAndCache( FileInfo fileInfo )
         {
             var image = new BitmapImage();
@@ -23,8 +23,8 @@ namespace WpfStackLayer.ImageProcessing
         /// <summary>
         /// 画像をファイルに保存します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <param name="fileInfo"></param>
+        /// <param name="bitmap">ビットマップ</param>
+        /// <param name="fileInfo">ファイル情報</param>
         public static void SaveToFile( BitmapSource bitmap, FileInfo fileInfo )
         {
             bitmap.SaveToFile( fileInfo );
@@ -33,8 +33,8 @@ namespace WpfStackLayer.ImageProcessing
         /// <summary>
         /// 画像を反転します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <returns></returns>
+        /// <param name="bitmap">ビットマップ</param>
+        /// <returns>ビットマップ</returns>
         public static BitmapSource Reverse( BitmapSource bitmap )
         {
             var writeableBitmap = new WriteableBitmap( bitmap );
@@ -70,8 +70,8 @@ namespace WpfStackLayer.ImageProcessing
         /// <summary>
         /// グレースケール画像を取得します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <returns></returns>
+        /// <param name="bitmap">ビットマップ</param>
+        /// <returns>ビットマップ</returns>
         public static BitmapSource GrayScale( BitmapSource bitmap )
         {
             var writeableBitmap = new WriteableBitmap( bitmap );
@@ -113,8 +113,8 @@ namespace WpfStackLayer.ImageProcessing
         /// <summary>
         /// ローパスフィルタを掛けた画像を取得します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <returns></returns>
+        /// <param name="bitmap">ビットマップ</param>
+        /// <returns>ビットマップ</returns>
         public static BitmapSource LowPassFilter( BitmapSource bitmap )
         {
             var writeableBitmap = new WriteableBitmap( bitmap );

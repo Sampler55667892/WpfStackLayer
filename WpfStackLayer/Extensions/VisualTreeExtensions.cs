@@ -12,9 +12,9 @@ namespace WpfStackLayer
         /// <summary>
         /// 指定した型の子UIに対して指定アクションを実行します。
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="current"></param>
-        /// <param name="action"></param>
+        /// <typeparam name="T">型 (DependencyObject)</typeparam>
+        /// <param name="current">起点</param>
+        /// <param name="action">アクション</param>
         public static void ActionOnChildren<T>( this DependencyObject current, Action<T> action )
             where T : DependencyObject
         {
@@ -34,9 +34,9 @@ namespace WpfStackLayer
         /// <summary>
         /// 指定した名前に一致した最初の子UIを返します。
         /// </summary>
-        /// <param name="current"></param>
-        /// <param name="targetName"></param>
-        /// <returns></returns>
+        /// <param name="current">起点</param>
+        /// <param name="targetName">検索対象の名称</param>
+        /// <returns>検索結果</returns>
         public static FrameworkElement FindFirstChild( this FrameworkElement current, string targetName )
         {
             int countChildren = VisualTreeHelper.GetChildrenCount( current );

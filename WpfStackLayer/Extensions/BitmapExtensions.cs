@@ -13,7 +13,7 @@ namespace WpfStackLayer
         /// <summary>
         /// ビットマップをクリップボードにコピーします。
         /// </summary>
-        /// <param name="bitmap"></param>
+        /// <param name="bitmap">ビットマップ</param>
         public static void CopyImageToClipboard( this BitmapSource bitmap )
         {
             Clipboard.SetImage( bitmap );
@@ -24,7 +24,7 @@ namespace WpfStackLayer
         /// RenderTargetBitmap を取得します。
         /// </summary>
         /// <remarks>96 DPI専用</remarks>
-        /// <param name="element"></param>
+        /// <param name="element">FrameworkElement</param>
         public static RenderTargetBitmap GetRenderTargetBitmap( this FrameworkElement element )
         {
             var targetBitmap =
@@ -39,8 +39,8 @@ namespace WpfStackLayer
         /// <summary>
         /// ファイルのロックを外しキャッシュを無視して画像をロードします。
         /// </summary>
-        /// <param name="image"></param>
-        /// <param name="fileInfo"></param>
+        /// <param name="image">ビットマップ画像</param>
+        /// <param name="fileInfo">ファイル情報</param>
         internal static void LoadFromFileIgnoringLockAndCache( this BitmapImage image, FileInfo fileInfo )
         {
             image.BeginInit();
@@ -58,8 +58,8 @@ namespace WpfStackLayer
         /// <summary>
         /// 画像をファイルに保存します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <param name="fileInfo"></param>
+        /// <param name="bitmap">ビットマップ</param>
+        /// <param name="fileInfo">ファイル情報</param>
         internal static void SaveToFile( this BitmapSource bitmap, FileInfo fileInfo )
         {
             BitmapEncoder encoder = null;
@@ -83,8 +83,8 @@ namespace WpfStackLayer
         /// <summary>
         /// 画像の属性を取得します。
         /// </summary>
-        /// <param name="bitmap"></param>
-        /// <returns></returns>
+        /// <param name="bitmap">書込み可能なビットマップ</param>
+        /// <returns>画像の属性</returns>
         internal static ImageAttribute GetAttribute( this WriteableBitmap bitmap )
         {
             var attr = new ImageAttribute {

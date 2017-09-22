@@ -5,16 +5,22 @@ using System.Linq.Expressions;
 
 namespace WpfStackLayer
 {
+    /// <summary>
+    /// ViewModelのベース
+    /// </summary>
     public class ViewModelBase : INotifyPropertyChanged
     {
+        /// <summary>
+        /// 依存関係プロパティが変更されたタイミングで発生するイベント
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// 値の更新とPropertyChangedイベントの発行を行います (Prismの SetProperty() と同様)。
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="currentValue"></param>
-        /// <param name="newValue"></param>
+        /// <typeparam name="T">プロパティの型</typeparam>
+        /// <param name="currentValue">現在の値</param>
+        /// <param name="newValue">新しい値</param>
         public void RaisePropertyChanged<T>( ref T currentValue, T newValue )
         {
             var isValueChanged =
@@ -37,8 +43,8 @@ namespace WpfStackLayer
         /// <summary>
         /// PropertyChangedイベントの発行を行います (Livetが提供するものと同様)。
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="Property"></param>
+        /// <typeparam name="T">プロパティの型</typeparam>
+        /// <param name="Property">プロパティのラムダ式</param>
         public void RaisePropertyChanged<T>( Expression<Func<T>> Property )
         {
             var propertyName = ((MemberExpression)Property.Body).Member.Name;
