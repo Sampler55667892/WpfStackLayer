@@ -20,7 +20,7 @@ namespace WpfStackLayer
         {
             int countChildren = VisualTreeHelper.GetChildrenCount( current );
 
-            for (int i = 0; i < countChildren; ++i) {
+            for (var i = 0; i < countChildren; ++i) {
                 var child = VisualTreeHelper.GetChild( current, i );
                 var target = child as T;
                 if (target == null)

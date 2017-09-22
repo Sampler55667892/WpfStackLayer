@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WpfStackLayer;
 
@@ -15,8 +14,10 @@ namespace WpfStackLayerUnitTest
             var item2 = new TextBlock();
             item1.Children.Add( item2 );
 
-            var found = item1.FindFirstChild<DependencyObject>();
-            found.Is( item2 );
+            var found1 = item1.FindFirstChild<TextBlock>();
+            found1.Is( item2 );
+            var found2 = item1.FindFirstChild<Button>();
+            found2.IsNull();
         }
 
         [TestMethod]
