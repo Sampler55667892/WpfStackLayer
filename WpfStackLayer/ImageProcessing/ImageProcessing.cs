@@ -25,10 +25,7 @@ namespace WpfStackLayer.ImageProcessing
         /// </summary>
         /// <param name="bitmap">ビットマップ</param>
         /// <param name="fileInfo">ファイル情報</param>
-        public static void SaveToFile( BitmapSource bitmap, FileInfo fileInfo )
-        {
-            bitmap.SaveToFile( fileInfo );
-        }
+        public static void SaveToFile( BitmapSource bitmap, FileInfo fileInfo ) => bitmap.SaveToFile( fileInfo );
 
         /// <summary>
         /// 画像を反転します。

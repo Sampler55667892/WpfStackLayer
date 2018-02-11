@@ -14,10 +14,7 @@ namespace WpfStackLayer
         /// ビットマップをクリップボードにコピーします。
         /// </summary>
         /// <param name="bitmap">ビットマップ</param>
-        public static void CopyImageToClipboard( this BitmapSource bitmap )
-        {
-            Clipboard.SetImage( bitmap );
-        }
+        public static void CopyImageToClipboard( this BitmapSource bitmap ) => Clipboard.SetImage( bitmap );
 
         // Memo : ActualWidth, ActualHeight 各依存関係プロパティは FrameworkElement で定義されている
         /// <summary>

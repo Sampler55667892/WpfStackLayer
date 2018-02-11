@@ -51,10 +51,7 @@ namespace WpfStackLayer
             RaisePropertyChanged( propertyName );
         }
 
-        void RaisePropertyChanged( string propertyName )
-        {
-            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
-        }
+        void RaisePropertyChanged( string propertyName ) => PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
 
         const string SetPropertyPrefix = "set_";
     }

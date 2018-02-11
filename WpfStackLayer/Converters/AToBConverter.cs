@@ -20,10 +20,7 @@ namespace WpfStackLayer.Converters
         /// <param name="parameter">パラメータ</param>
         /// <param name="culture">カルチャー</param>
         /// <returns>変換結果</returns>
-        public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
-        {
-            return (B)value;
-        }
+        public object Convert( object value, Type targetType, object parameter, CultureInfo culture ) => (B)value;
 
         /// <summary>
         /// 逆変換処理を実行します
@@ -33,9 +30,6 @@ namespace WpfStackLayer.Converters
         /// <param name="parameter">パラメータ</param>
         /// <param name="culture">カルチャー</param>
         /// <returns>逆変換結果</returns>
-        public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture )
-        {
-            return (A)value;
-        }
+        public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture ) => (A)value;
     }
 }
